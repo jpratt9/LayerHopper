@@ -1,7 +1,7 @@
 LayerHopper = LibStub("AceAddon-3.0"):NewAddon("LayerHopper", "AceConsole-3.0", "AceEvent-3.0", "AceComm-3.0", "AceTimer-3.0")
 LayerHopper.Dialog = LibStub("AceConfigDialog-3.0")
 LayerHopper:RegisterChatCommand("lh", "ChatCommand")
-LayerHopper.VERSION = 158
+LayerHopper.VERSION = 160
 
 local L = LibStub("AceLocale-3.0"):GetLocale("LayerHopper")
 
@@ -369,12 +369,22 @@ function LayerHopper:ToggleConfigWindow()
 end
 
 local blacklistedNpcIds = {
+	-- Original blacklist (pets/companions with invalid zone_uid)
+	"1860",  -- Voidwalker
 	"2671",  -- Mechanical Squirrel
 	"14444", -- Orcish Orphan
 	"14878", -- Jubling
 	"15429", -- Disgusting Oozeling
 	"15706", -- Winter Reindeer
-	"1860",  -- Voidwalker
+	-- From GitHub issues (mobs reported to break layer detection)
+	"372", "466", "877", "879", "982", "1064", "1281", "1400", "2093", "2099",
+	"2321", "2347", "2552", "2554", "2555", "2557", "2559", "2563", "2573", "2574",
+	"2578", "2716", "2717", "2718", "2726", "2761", "2834", "2893", "2894", "2910",
+	"2944", "2957", "2960", "3035", "3239", "3296", "3310", "3328", "3464", "3466",
+	"3501", "3513", "3560", "3713", "3717", "3814", "3825", "3838", "4048", "4190",
+	"4198", "4317", "4321", "4979", "5102", "5308", "5858", "5860", "5958", "6028",
+	"6491", "9117", "9525", "10377", "10612", "11561", "12616", "12696", "12724",
+	"12903", "14123", "14388", "14390", "15076", "15131", "15659", "228718", "228722",
 }
 
 function LayerHopper:IsBlacklistedNpcId(npc_id)

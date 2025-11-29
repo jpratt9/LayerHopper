@@ -1,7 +1,7 @@
-﻿## Interface: 11304
+﻿## Interface: 11508
 ## Title: Layer Hopper
 ## Author: psynct
-## Version: 1.5.8
+## Version: 1.6.0
 ## Notes: Allows easy and automatic layer hopping within guild
 ## SavedVariablesPerCharacter: LayerHopperOptions
 
